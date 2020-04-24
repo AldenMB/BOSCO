@@ -29,7 +29,7 @@ def test():
     espeak('hello world!')
 
 def sting():
-    p = Process(target = run, args = ['aplay','sting.ogg'])
+    p = Process(target = run, args = 'cvlc sting.ogg --play-and-exit'.split(' '))
     p.start()
     return p
 
