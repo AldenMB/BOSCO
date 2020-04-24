@@ -5,6 +5,13 @@ from neopixel import NeoPixel
 from board import D18
 import time
 
+left_arm = None
+right_arm = None
+head = None
+lights = None
+mouth = None
+eyes = None
+
 def init():
     global left_arm = AngularServo(10, min_angle = 90, max_angle = -90)
     global right_arm = AngularServo(11)
