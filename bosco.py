@@ -28,7 +28,7 @@ def disconnect_peripherals():
     lights.deinit()
 
 def test():
-    b = blink()
+    b = blink(1.0)
     s = sting()
     pp = [move(servo, 0.5,2,'linear') for servo in (left_arm, right_arm, head)]+[b,s]
     [p.join() for p in pp]
