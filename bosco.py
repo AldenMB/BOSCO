@@ -13,12 +13,13 @@ mouth = None
 eyes = None
 
 def init():
-    global left_arm = AngularServo(10, min_angle = 90, max_angle = -90)
-    global right_arm = AngularServo(11)
-    global head = AngularServo(12)
-    global lights = NeoPixel(D18, 8)
-    global mouth = lights[:6]
-    global eyes = lights[6:]
+    global left_arm, right_arm, head, lights, mouth, eyes
+    left_arm = AngularServo(10, min_angle = 90, max_angle = -90)
+    right_arm = AngularServo(11)
+    head = AngularServo(12)
+    lights = NeoPixel(D18, 8)
+    mouth = lights[:6]
+    eyes = lights[6:]
     lights.fill((255,0,0))
 
 def disconnect_peripherals():
