@@ -44,9 +44,9 @@ def espeak(str, args = ['-ven-us']):
 
 def blink(duration):
     def offon():
-        lights[6:].fill((0,0,0))
+        lights[6:] = [(0,0,0)]*2
         time.sleep(duration)
-        lights[6:].fill((255,255,255))
+        lights[6:] = [(0,0,0)]*2
     p = Process(target = offon)
     p.start()
     return p
