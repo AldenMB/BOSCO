@@ -55,7 +55,7 @@ def blink(duration):
     p.start()
     return p
 
-def move(servo, destination, duration, path='linear')
+def move(servo, destination, duration, path='linear'):
     if path in servo_paths:
         path = servo_paths[path]
     
