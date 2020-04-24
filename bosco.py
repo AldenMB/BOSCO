@@ -33,7 +33,11 @@ def test():
     espeak('hello world!')
 
 def sting():
-    p = Process(target = run, args = ['ogg123 sting.ogg'.split(' ')])
+    p = Process(
+        target = run, 
+        args = ['ogg123 sting.ogg'.split(' ')], 
+        kwargs = {'capture_output':True},
+        )
     p.start()
     return p
 
