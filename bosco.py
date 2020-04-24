@@ -9,8 +9,6 @@ left_arm = None
 right_arm = None
 head = None
 lights = None
-mouth = None
-eyes = None
 
 def init():
     global left_arm, right_arm, head, lights, mouth, eyes
@@ -18,8 +16,6 @@ def init():
     right_arm = AngularServo(11)
     head = AngularServo(12)
     lights = NeoPixel(D18, 8)
-    mouth = lights[:6]
-    eyes = lights[6:]
     lights.fill((255,0,0))
 
 def disconnect_peripherals():
@@ -48,9 +44,9 @@ def espeak(str, args = ['-ven-us']):
 
 def blink(duration):
     def offon():
-        eyes.fill((0,0,0))
+        lights[6:].fill((0,0,0))
         time.sleep(duration)
-        eyes.fill((255,255,255))
+        lights[6:].fill((255,255,255))
     p = Process(target = offon)
     p.start()
     return p
