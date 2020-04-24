@@ -33,7 +33,7 @@ def test():
     espeak('hello world!')
 
 def sting():
-    p = Process(target = run, args = 'cvlc sting.ogg --play-and-exit'.split(' '))
+    p = Process(target = run, args = ['cvlc sting.ogg --play-and-exit'.split(' ')])
     p.start()
     return p
 
@@ -87,3 +87,4 @@ servo_paths = {
 if __name__ == '__main__':
     init()
     test()
+    disconnect_peripherals()
