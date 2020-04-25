@@ -23,6 +23,6 @@ def generalized_knock_knock():
     # A person's first name which also sounds like part of a common phrase who?
     bosco.wait()
     bosco.say(
-        "The complete comon phrase."
+        "The complete common phrase."
         ).join()
-    bosco.sing().join()
+    bosco.sting().join()
