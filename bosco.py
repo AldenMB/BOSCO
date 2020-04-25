@@ -33,6 +33,9 @@ def test():
     [p.join() for p in pp]
     espeak('hello world!')
 
+def wait():
+    input()
+
 def sting():
     p = Process(
         target = run, 
