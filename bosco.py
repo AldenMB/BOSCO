@@ -60,7 +60,7 @@ def espeak(str,
     return run(command.split()+[str])
 
 def say(str):
-    p = Process(target = espeak, kwargs = {'wpm':150})
+    p = Process(target = espeak, args = [str], kwargs = {'wpm':150})
     p.start()
     return p
 
