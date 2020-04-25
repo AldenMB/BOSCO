@@ -26,3 +26,25 @@ def generalized_knock_knock():
         "The complete common phrase."
         ).join()
     bosco.sting().join()
+
+def elephant_sneakers():
+    bosco.say(
+        "Why was the elephant wearing sneakers?"
+        ).join()
+    # Why?
+    bosco.wait()
+    bosco.say(
+        "So that he could sneak around in the grass."
+        ).join()
+    bosco.sting().join()
+
+def knock_knock_tennis():
+    bosco.say("Knock knock.").join()
+    #who is there?
+    bosco.wait()
+    bosco.say("Tennis.").join()
+    #tennis who?
+    bosco.wait()
+    bosco.say("Ten is five plus five!").join()
+    bosco.sting().join()
+    
