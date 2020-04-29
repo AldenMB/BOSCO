@@ -92,7 +92,8 @@ def move(servo, destination, duration, path='linear'):
                     (time.time()-start_time)/duration
                     )
                 )
-            time.sleep(0.010)
+            print(servo.value)
+            time.sleep(0.050)
             #servo expects updates every 20ms, so no sense in waiting shorter.
         servo.value = destination
     
