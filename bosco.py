@@ -84,6 +84,7 @@ def move(servo, destination, duration, path='linear'):
     distance = destination - start_position
     
     def go():
+        nonlocal servo
         while time.time() <= end_time:
             servo.value = (
                 start_position 
