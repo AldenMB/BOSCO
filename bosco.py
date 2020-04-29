@@ -2,7 +2,7 @@ from subprocess import run
 from multiprocessing import Process
 from gpiozero import AngularServo
 from neopixel import NeoPixel
-from board import D10
+from board import D21
 import time
 import random
 
@@ -16,7 +16,7 @@ def init():
     left_arm = AngularServo(17, min_angle = 90, max_angle = -90)
     right_arm = AngularServo(27)
     head = AngularServo(22)
-    lights = NeoPixel(D10, 8)
+    lights = NeoPixel(D21, 8)
     lights.fill((255,0,0))
 
 def disconnect_peripherals():
