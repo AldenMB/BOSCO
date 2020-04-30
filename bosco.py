@@ -1,11 +1,13 @@
 from subprocess import run
 from threading import Thread
-from gpiozero import AngularServo
+from gpiozero import AngularServo, Device
+from gpiozero.pins.pigpio import PiGPIOFactory
 from neopixel import NeoPixel
 from board import D21
 import time
 import random
 
+Device.pin_factory = PiGPIOFactory()
 left_arm = None
 right_arm = None
 head = None
