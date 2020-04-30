@@ -1,11 +1,13 @@
 from subprocess import run
 from threading import Thread
-from gpiozero import AngularServo
+from gpiozero import AngularServo, Device
+from gpiozero.pins.pigpio import PiGPIOFactory
 from neopixel import NeoPixel
-from board import D21
+from board import D10
 import time
 import random
 
+Device.pin_factory = PiGPIOFactory()
 left_arm = None
 right_arm = None
 head = None
@@ -17,7 +19,7 @@ def init():
     left_arm = AngularServo(17, min_angle=90, max_angle=-90)
     right_arm = AngularServo(27)
     head = AngularServo(22)
-    lights = NeoPixel(D21, 8)
+    lights = NeoPixel(D10, 8)
     lights.fill((255, 0, 0))
 
 
