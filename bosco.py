@@ -100,9 +100,7 @@ def move(servo, destination, duration, path="linear"):
             )
             time.sleep(0.010)
             # servo expects updates every 20ms, so no sense in waiting shorter.
-        servo.value = destination
-        #time.sleep(0.050)
-        #servo.value = None
+        servo.angle = destination
 
     t = Thread(target=go)
     t.start()
