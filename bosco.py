@@ -113,7 +113,7 @@ def move(servo, destination, duration, path="linear"):
 # should map 0 -> 0 and 1 -> 1 and be continuous
 servo_paths = {
     "linear": (lambda x: x),
-    "quadratic": (lambda x: x ** 2 / 2 if x <= 0.5 else 1 - (1 - x) ** 2 / 2),
+    "quadratic": (lambda x: 2 * x ** 2 if x <= 0.5 else 1 - 2 * (1 - x) ** 2),
     "cubic": (lambda x: (3 - 2 * x) * x ** 2),
 }
 
