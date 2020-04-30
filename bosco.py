@@ -30,12 +30,12 @@ def disconnect_peripherals():
 def test():
     b = blink(1.0)
     s = sting()
-    tt = [move(servo, 0.5, 2, "linear") for servo in (left_arm, right_arm, head)] + [
+    tt = [move(servo, 90, 2, "linear") for servo in (left_arm, right_arm, head)] + [
         b,
         s,
     ]
     [t.join() for t in tt]
-    tt = [move(servo, 0, 1, "quadratic") for servo in (left_arm, right_arm, head)]
+    tt = [move(servo, 0, 1, "cubic") for servo in (left_arm, right_arm, head)]
     [t.join() for t in tt]
     espeak("hello world!")
 
@@ -89,13 +89,13 @@ def move(servo, destination, duration, path="linear"):
     start_time = time.time()
     end_time = start_time + duration
 
-    start_position = servo.value
+    start_position = servo.angle
     distance = destination - start_position
 
     def go():
         nonlocal servo
         while time.time() <= end_time:
-            servo.value = start_position + distance * path(
+            servo.angle = start_position + distance * path(
                 (time.time() - start_time) / duration
             )
             time.sleep(0.010)
