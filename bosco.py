@@ -1,13 +1,11 @@
 from subprocess import run
 from threading import Thread
-from gpiozero import AngularServo, Device
-from gpiozero.pins.pigpio import PiGPIOFactory
+from gpiozero import AngularServo
 from neopixel import NeoPixel
 from board import D21
 import time
 import random
 
-Device.pin_factory = PiGPIOFactory()
 left_arm = None
 right_arm = None
 head = None
@@ -100,8 +98,7 @@ def move(servo, destination, duration, path="linear"):
             servo.value = start_position + distance * path(
                 (time.time() - start_time) / duration
             )
-            print(servo.value)
-            time.sleep(0.050)
+            time.sleep(0.010)
             # servo expects updates every 20ms, so no sense in waiting shorter.
         servo.value = destination
         #time.sleep(0.050)
