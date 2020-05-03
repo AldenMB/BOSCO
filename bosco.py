@@ -6,12 +6,14 @@ from neopixel import NeoPixel
 from board import D18
 import time
 import random
+from countdisplay import CountDisplay
 
 Device.pin_factory = PiGPIOFactory()
 left_arm = None
 right_arm = None
 head = None
 lights = None
+display = None
 
 
 def init():
@@ -21,6 +23,7 @@ def init():
     head = AngularServo(22)
     lights = NeoPixel(D18, 8)
     lights.fill((255, 0, 0))
+    display = CountDisplay(23,24)
 
 
 def disconnect_peripherals():
