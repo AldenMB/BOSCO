@@ -13,6 +13,13 @@ run this on the command line:
     sudo systemctl enable pigpiod.service
     sudo systemctl start pigpiod.service
 
+* choose the usb auio device as the default
+
+following directions at https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi?view=all
+we must run `sudo nano /usr/share/alsa/alsa.conf` and 
+on the lines `defaults.ctl.card 0` and `defaults.pcm.card 0`
+replace 0 with 1.
+
 ## libraries
 
 This project requires the following libraries installed:
